@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Моя тема</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Космос — Візитка річного проєкту</title>
+  <meta name="description" content="Візитка річного проєкту на тему космосу. Чотири напрями розробки: гра, бот, сайт та застосунок.">
+  <style>
+    :root {
+      --bg-color: #050811;
+      --neon-color: #00F5FF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--neon-color);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(0, 245, 255, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 85% 30%, rgba(0, 245, 255, 0.1) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 45% 75%, rgba(0, 245, 255, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 75% 85%, rgba(0, 245, 255, 0.09) 2px, transparent 2px);
+      background-size: 200px 200px;
+    }
+
+    .container {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px rgba(0, 245, 255, 0.6), 0 0 25px rgba(0, 245, 255, 0.3);
+    }
+
+    .description {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.125rem;
+      padding: 1.5rem;
+      border: 1px solid var(--neon-color);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.15), inset 0 0 15px rgba(0, 245, 255, 0.08);
+      background-color: var(--bg-color);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      border: 2px solid var(--neon-color);
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background-color: var(--bg-color);
+      box-shadow: 0 0 12px rgba(0, 245, 255, 0.2), inset 0 0 10px rgba(0, 245, 255, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 24px rgba(0, 245, 255, 0.55), inset 0 0 16px rgba(0, 245, 255, 0.15);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 1.25rem;
+      stroke: var(--neon-color);
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 6px rgba(0, 245, 255, 0.6));
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 0 8px rgba(0, 245, 255, 0.4);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 500px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Моя тема: космос</h1>
-  <p>Тут буде мій світ.</p>
+  <main class="container">
+    <header>
+      <h1>Космос</h1>
+      <p class="description">
+        Цей річний проєкт присвячений дослідженню космічного простору та небесних об'єктів. Протягом року тема розкривається через створення чотирьох окремих цифрових продуктів. Кожен напрям допомагає зручно вивчати будову Всесвіту та взаємодіяти з астрономічною інформацією.
+      </p>
+    </header>
+
+    <section class="grid" aria-label="Напрями проєкту">
+      <article class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+          <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+          <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+          <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+        </svg>
+        <h2>Гра</h2>
+        <p>Інтерактивний космічний симулятор із керуванням апаратом та дослідженням орбіт.</p>
+      </article>
+
+      <article class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="8" width="18" height="12" rx="3"/>
+          <path d="M12 2v6"/>
+          <circle cx="12" cy="2" r="1"/>
+          <circle cx="9" cy="14" r="1.5"/>
+          <circle cx="15" cy="14" r="1.5"/>
+        </svg>
+        <h2>Бот</h2>
+        <p>Автоматизований помічник у месенджері для швидкого пошуку відомостей про космос.</p>
+      </article>
+
+      <article class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M2 12h20"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <h2>Сайт</h2>
+        <p>Вебпортал із структурованими матеріалами та візуалізацією небесних тіл.</p>
+      </article>
+
+      <article class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="6" y="2" width="12" height="20" rx="2"/>
+          <line x1="12" y1="18" x2="12.01" y2="18"/>
+        </svg>
+        <h2>Застосунок</h2>
+        <p>Мобільний інструмент для зручного перегляду космічних об'єктів та нотаток.</p>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
